@@ -493,7 +493,7 @@
 
         async function populatePreviousLeaderboard() {
           try {
-            const res = await fetch('https://aetricrewardsdata.vercel.app/api/prev-leaderboard/rainbet');
+            const res = await fetch('https://aetricrewardsdata.vercel.app/api/prev-leaderboard/raw365');
             if(!res.ok) throw new Error('Failed to fetch previous leaderboard');
             const data = await res.json();
             const leaderboard = data.leaderboard || [];
