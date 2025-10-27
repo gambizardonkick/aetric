@@ -448,8 +448,8 @@
           const prize = findPrize(i+1);
           if(player){
             document.getElementById(`winner-${i+1}-username`).textContent = player.name;
-document.getElementById(`winner-${i+1}-wagered`).innerHTML = `
-  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20" fill="none" style="vertical-align: middle; margin-right: 4px;">
+            document.getElementById(`winner-${i+1}-wagered`).innerHTML = `
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" style="vertical-align: middle; margin-right: 6px;">
     <defs>
       <linearGradient id="currencyGradient" x1="0" y1="0" x2="20" y2="20" gradientUnits="userSpaceOnUse">
         <stop offset="0%" stop-color="#00FFA3"/>
@@ -474,11 +474,11 @@ document.getElementById(`winner-${i+1}-wagered`).innerHTML = `
           const prize = findPrize(i+1);
           if(player){
             const row = document.createElement('tr');
-            row.innerHTML = `
+ row.innerHTML = `
   <td>${i + 1}</td>
   <td>${player.name}</td>
-  <td style="display: flex; align-items: center; gap: 4px;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20" fill="none" style="vertical-align: middle;">
+  <td style="display: flex; align-items: center; gap: 6px; font-size: 16px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none" style="vertical-align: middle;">
       <defs>
         <linearGradient id="currencyGradient" x1="0" y1="0" x2="20" y2="20" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stop-color="#00FFA3"/>
@@ -492,22 +492,7 @@ document.getElementById(`winner-${i+1}-wagered`).innerHTML = `
     </svg>
     ${Number(player.wager).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
   </td>
-  <td style="display: flex; align-items: center; gap: 4px;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20" fill="none" style="vertical-align: middle;">
-      <use href="#currencySymbol"></use>
-      <defs>
-        <linearGradient id="currencyGradient" x1="0" y1="0" x2="20" y2="20" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#00FFA3"/>
-          <stop offset="100%" stop-color="#DC1FFF"/>
-        </linearGradient>
-      </defs>
-      <path fill-rule="evenodd" clip-rule="evenodd"
-        d="M11.191 4.714a2.375 2.375 0 00-2.386 0L5.91 6.394l3.985 2.238 4.091-2.297-2.794-1.621zm3.428 1.99l-2.393 4.26 2.362 4.205.167-.096a2.4 2.4 0 001.193-2.078V8.86a2.4 2.4 0 00-1.193-2.077l-.136-.079zm-.699 8.853l-4.026-2.26-3.92 2.2 2.831 1.644a2.375 2.375 0 002.386 0l2.73-1.584zm-8.668-.479l2.31-4.114-2.341-4.17A2.401 2.401 0 004.049 8.86v4.136c0 .857.455 1.65 1.193 2.078l.01.005z"
-        fill="url(#currencyGradient)">
-      </path>
-    </svg>
-    ${prize}
-  </td>
+  <td style="font-size: 16px;">$${prize}</td>
 `;
 
             tbody.appendChild(row);
